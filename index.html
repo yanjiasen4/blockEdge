@@ -1,0 +1,20 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://unpkg.com/vue"></script>
+    <script src="http://cdn.peerjs.com/0.3/peer.min.js"></script>
+
+</head>
+
+<div id="app">
+    <button v-if='connected' v-on:click='connectClose'>Close</button>
+    <button v-else v-on:click='connectPeer'>Connect</button>
+    <input id='msg' v-model="msg"/>
+    <input type="submit" value="submit" v-on:click="sendMsg"/>
+</div>
+
+<script src="./js/main.js"></script>
+</html>
