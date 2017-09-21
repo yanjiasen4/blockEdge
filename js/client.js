@@ -23,13 +23,13 @@ peer.on('connection', function (conn) {
             } else if (recv.type == 'file') {
                 var reader = new FileReader();
 
-                reader.onload = function (e) {
+                reader.addEventListener("loadend", function (e) {
                     data.img = e.target.result;
-                }
+                });
 
-                var blob = new Blob(recv.data.file, {
-                    type: recv.data.type
-                })
+                var blob = new Blob([recv.data.file], {
+                    type: recv.data.filetype
+                });
 
                 reader.readAsDataURL(blob)
             }

@@ -49,7 +49,7 @@ var app = new Vue({
             });
 
 
-            console.log(blob)
+            console.log(file)
             conn.send({
                 type: 'file',
                 data: {
